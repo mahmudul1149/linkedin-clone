@@ -57,7 +57,7 @@
               >
             </li>
             <li>
-              <nuxt-link to="#" class="nuxt">
+              <nuxt-link to="/feed" class="nuxt">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
