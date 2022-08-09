@@ -204,9 +204,7 @@ export default {
   right: 5px;
   font-size: 1.3rem;
 }
-.details .groups .add-icon:hover {
-  background: #696e6e;
-}
+
 .details .groups ul li {
   display: inline-flex;
   overflow: hidden;

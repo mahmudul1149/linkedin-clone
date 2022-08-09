@@ -5,9 +5,11 @@
       <leftsidebar/>
       </div>
 
-      <div class="main"></div>
+      <div class="main">
+        <main-section></main-section>
+      </div>
       <div class="right-sidebar">
-        <img src="https://unsplash.com/images/animals/tiger" alt="" />
+    
       </div>
     </div>
   </div>
@@ -15,10 +17,12 @@
 
 <script>
 import Leftsidebar from "../layouts/leftsidebar.vue";
+import MainSection from "../layouts/Main.vue";
 export default {
   name: "IndexPage",
   components: {
     Leftsidebar,
+    MainSection,
   },
 };
 </script>
@@ -41,6 +45,8 @@ export default {
 .flex-container {
   padding-top: 2rem;
   display: grid;
-  grid-template-columns: auto 800px auto;
+  gap: 1rem;
+  grid-template-columns: 1fr 2fr 1fr;
+
 }
 </style>
