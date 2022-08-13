@@ -1,15 +1,21 @@
 <template>
-  <div class="bg-dark">
+  <div class="bg-dark feed">
     <div class="flex-container container">
        <div class="left-sidebar">
-      <leftsidebar/>
+                 <leftsidebar/>
       </div>
 
       <div class="main">
         <main-section></main-section>
       </div>
       <div class="right-sidebar">
-        <img src="../assets/image/hirring.jpg" alt="">
+<div class="fixed">
+          <div class="follow ">
+         
+         <addfeed-vue/>
+        </div>
+<div class="">
+          <img src="../assets/image/hirring.jpg" alt="">
         <div class="mt-2" >
         <li-icon type="linkedin-logo" class="global-footer-compact__linkedin-logo" size="14dp" color="brand" role="img" aria-label="LinkedIn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 14" data-supported-dps="56x14" fill="currentColor" class="mercado-match" width="56" height="14" focusable="false">
   <g>
@@ -18,6 +24,8 @@
 </svg>   Created by <a href="https://twitter.com/MdMahmu85962551">Md Mahmudul Islam</a>  2022</li-icon>
      
     </div>
+</div>
+</div>
       </div>
     </div>
   </div>
@@ -26,11 +34,13 @@
 <script>
 import Leftsidebar from "../layouts/leftsidebar.vue";
 import MainSection from "../layouts/Main.vue";
+import addfeedVue from "../layouts/addfeed.vue";
 export default {
   name: "IndexPage",
   components: {
     Leftsidebar,
     MainSection,
+    addfeedVue
   },
 };
 </script>
@@ -50,28 +60,52 @@ export default {
   background: #f3f2ef;
 
 }
+.fixed {
+  position: fixed;
+  bottom: 0;
+  top: 5rem;
+  width: 300px;
+}
 .flex-container {
+  margin-top: 3rem;
   padding-top: 2rem;
   display: grid;
-  gap: 1rem;
   grid-template-columns: 1fr 2fr 1fr;
+
 }
+
 .mt-2 {
   margin-top: .5rem;
 }
 .right-sidebar {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+ margin-right: auto;
 }
 .right-sidebar img {
   border-radius: 5px;
+  width: 100%;
+  margin-top: 1rem;
 }
 .right-sidebar a {
   color: #333;
 
 }
+.main {
+  margin-right: 2rem;
+}
 .right-sidebar a:hover {
   text-decoration: underline;
   color:#0A66C2;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media screen and (max-width: 800px) {
+  .flex-container {
+      grid-template-columns:  1fr;
+  }
+.main {
+  width: 100%;
+}
+ 
 }
 </style>
