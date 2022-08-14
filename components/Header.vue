@@ -77,8 +77,8 @@
             <button class="dropdown" @click="visible" v-if="!isUserAuth">
               <li class="profile-me">
                 <img width="24"
-                  src="https://media-exp1.licdn.com/dms/image/C4E03AQElME9Xlfo1fg/profile-displayphoto-shrink_100_100/0/1653053988341?e=1665619200&amp;v=beta&amp;t=vZbFguEJ8RxITqTXfE8q7A5Q9aRtIzlqEz79A0SYsR8"
-                  height="24" alt="MD Mahmudul Islam" id="ember17" class="global-nav__me-photo ember-view" />
+                  src="../assets/image/Profile-pic.jpg"
+                    alt="MD Mahmudul Islam" id="ember17" class="global-nav__me-photo ember-view" />
                 <button class="nuxt-me">
                   Me
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" data-supported-dps="16x16"
@@ -115,6 +115,13 @@ export default {
    user() {
     return this.$store.state.user
    }
+  },
+       filters: {
+  
+  	liveSubstr: function(string) {
+    	return string.substring(0,1).toLowerCase();
+        }
+  
   },
   methods: {
     visible() {
@@ -286,7 +293,10 @@ header {
   display: flex;
   align-items: center;
 }
-
+.profile-me img {
+  width: 30px;
+  height: 30px;
+}
 .nuxt::after {
   content: "";
   position: absolute;
