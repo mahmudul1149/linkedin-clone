@@ -51,7 +51,7 @@
 
     <div class="show-profile sticky" v-for="item in  addItems" :key="item.id">
     <div class="box">
-      <img  class="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfg30kWDYgrSeRobjdwPDiNw1EDK62VkV4SvPXWGT5bqSCAdnNG0CjRmpXRcW43N9OHCY&usqp=CAU " alt="">
+         <h3 class="profile-photo">{{ user.displayName | liveSubstr }}</h3>
      <div class="mt-1">
          <a>{{user.displayName}}</a>
       <br>
@@ -154,9 +154,9 @@
           </div>
   </div>
   </div>
-   <div class="show-profile" v-for="item in  addItems" :key="item.id">
+   <div class="show-profile" >
     <div class="box">
-      <img  class="profile-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfg30kWDYgrSeRobjdwPDiNw1EDK62VkV4SvPXWGT5bqSCAdnNG0CjRmpXRcW43N9OHCY&usqp=CAU " alt="">
+       <h3 class="profile-photo">{{ user.displayName | liveSubstr }}</h3>
      <div class="mt-1">
          <a>Md Mahmudul islam</a>
       <br>
@@ -399,6 +399,13 @@ export default {
      },
   
   },
+       filters: {
+  
+  	liveSubstr: function(string) {
+    	return string.substring(0,1).toLowerCase();
+        }
+  
+  },
   methods: {
   addTodos() {
     localStorage.setItem('items', JSON.stringify(this.text))
@@ -466,6 +473,17 @@ export default {
   outline: none;
   border-radius: 36px;
 }
+.show-profile .profile-photo {
+  background: #BDBDBD;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  line-height: 45px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+.show-profile .profile-photo 
 .profile .profile-post input::placeholder {
   color: rgb(83, 80, 80);
   font-weight: 500;

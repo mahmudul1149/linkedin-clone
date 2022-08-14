@@ -3,7 +3,7 @@
     <div class="box dark-shadow">
       <div class="background">
         <div class="image-div">
-          <img src="../assets/image/profie.png" alt="" />
+            <h3>{{ user.displayName | liveSubstr }}</h3>
         </div>
       </div>
       <div class="content">
@@ -90,6 +90,13 @@ export default {
         return this.$store.state.user.hasOwnProperty('id')
       }
     },
+     filters: {
+  
+  	liveSubstr: function(string) {
+    	return string.substring(0,1).toLowerCase();
+        }
+  
+  },
     mounted() {
     const loaded = JSON.parse(localStorage.getItem("users"));
     if (loaded) {
@@ -123,17 +130,22 @@ export default {
 .mt-2 {
   margin-top: 2rem;
 }
-.image-div img {
-  width: 80px;
-  height: 80px;
+.image-div{
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
   border-radius: 50%;
-  background: #fff;
+  background: #BDBDBD;
+  color: white !important;
+  font-weight: bolder;
   position: absolute;
   left: 50%;
   top: 90%;
-  padding: 0.5rem;
   transform: translate(-50%, -50%);
-  text-align: center;
+}
+.image-div h3 {
+  font-size: 1.3rem;
 }
 
 .flex-container .content {

@@ -126,7 +126,5 @@ export default {
     font-size: .9rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.view-btn:hover {
-    background: #ccc;
-}
+
 </style>
