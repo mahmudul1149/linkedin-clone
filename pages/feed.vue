@@ -92,6 +92,7 @@ export default {
 }
 .main {
   margin-right: 2rem;
+  margin-bottom: 1rem;
 }
 .right-sidebar a:hover {
   text-decoration: underline;
@@ -108,4 +109,5 @@ export default {
 }
  
 }
+
 </style>

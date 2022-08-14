@@ -1,5 +1,5 @@
 <template>
-  <div class=" mt-2 fixed-position">
+  <div class=" mt-2 mb-2 fixed-position">
     <div class="box dark-shadow">
       <div class="background">
         <div class="image-div">
@@ -61,7 +61,7 @@
           <path d="M14 9H9v5H7V9H2V7h5V2h2v5h5z"></path>
         </svg>
       </div>
-      <div class="btn-center">
+      <div class="btn-center  ">
         <button class="btn-dark">Discover more</button>
       </div>
     </div>
@@ -323,10 +323,43 @@ export default {
   } */
   .flex-container {
     grid-template-columns:  1fr;
+    width: 100%;
+
+    
 }
  .fixed-position {
     position: inherit;
     width: 100% !important;
   }
 }
+@media screen and (max-width: 400px)  {
+   .left-sidebar {
+    width: 300px;
+    margin: auto !important;
+   }
+   .main {
+    width: 300px !important;
+    margin: auto !important;
+   }
+   .artdeco-button__text {
+      display: none;
+   }
+.artdeco-button__text {
+  display: none;
+}
+.signup .input-group input  {
+  width: 300px !important;
+  background: white;
+}
+.signin .input-group input  {
+  width: 300px !important;
+}
+.mb-2 {
+  margin-bottom: 1rem !important;
+}
+.btn-text {
+  display: none;
+}
+}
+
 </style>
