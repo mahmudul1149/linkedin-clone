@@ -93,7 +93,7 @@ export default {
      filters: {
   
   	liveSubstr: function(string) {
-    	return string.substring(0,1).toLowerCase();
+    	return string.substring(0,1);
         }
   
   },
@@ -136,7 +136,7 @@ export default {
   text-align: center;
   line-height: 50px;
   border-radius: 50%;
-  background: #BDBDBD;
+  background: #532EAC;
   color: white !important;
   font-weight: bolder;
   position: absolute;
@@ -144,9 +144,7 @@ export default {
   top: 90%;
   transform: translate(-50%, -50%);
 }
-.image-div h3 {
-  font-size: 1.3rem;
-}
+
 
 .flex-container .content {
   background: #fff;
