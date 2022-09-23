@@ -762,6 +762,7 @@ export default {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .profile .profile-post input {
   width: 100%;
@@ -779,6 +780,7 @@ export default {
   line-height: 45px;
   text-align: center;
   color: white;
+  cursor: pointer;
 }
 .show-profile .profile-photo .profile .profile-post input::placeholder {
   color: rgb(83, 80, 80);
@@ -820,9 +822,6 @@ button {
 .show-profile {
   margin-top: 1rem;
   border: 1px solid rgba(0, 0, 0, 0.3);
-  padding-left: 0.5rem;
-  padding-top: 0.5rem;
-  padding-right: 0.5rem;
   background: #fff;
   border-radius: 10px;
   margin-bottom: 0.5rem !important;
@@ -830,6 +829,7 @@ button {
 .show-profile .box {
   display: flex;
   gap: 0.4rem;
+  margin: 0.5rem;
 }
 .show-profile .posting-title {
   padding: 0.5rem;
@@ -853,17 +853,20 @@ button {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  cursor: pointer;
 }
 .show-profile .post-image {
   margin-top: 1rem;
   width: 100%;
   height: 100%;
-  background-size: cover;
+  object-fit: cover;
   background-position: center;
+  background-size: cover;
 }
 .react {
-  margin-top: 0.4rem;
-  border-top: 1px solid #ccc;
+  margin: 0 0.8rem;
+  margin-top: 0.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -871,9 +874,9 @@ button {
 .react .flex-wrap {
   display: flex;
   align-items: center;
-  padding: 0.5rem 0.7rem;
-  margin: 0.2rem;
   gap: 0.2rem;
+  margin: 0.2rem 0;
+  padding: 0.5rem 0.5rem;
 }
 .react .flex-wrap:hover {
   background: #ccc;
