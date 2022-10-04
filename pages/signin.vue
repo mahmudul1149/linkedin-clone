@@ -1,7 +1,7 @@
 <template>
   <div class="signin">
     <div v-if="isLoading" class="loading">
-      <img src="../assets/image/loading.gif" alt="" />
+      <img src="../assets/image/linkedin_loder.gif" alt="" />
     </div>
     <div v-else class="input-group container">
       <div class="text-center">
@@ -98,7 +98,7 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 .container {
   max-width: 1200px;
   margin: auto;
@@ -141,7 +141,7 @@ export default {
   letter-spacing: 0.2mm;
   padding: 1rem 0.6rem;
   font-size: 1.2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 .signin p {
   margin-top: 1rem;

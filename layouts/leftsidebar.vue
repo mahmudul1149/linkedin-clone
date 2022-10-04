@@ -3,7 +3,7 @@
     <div class="box dark-shadow">
       <div class="background">
         <div class="image-div">
-          <h3>{{ user.displayName | liveSubstr }}</h3>
+          <img src="../assets/image/profile-linked.png" alt="" />
         </div>
       </div>
       <div class="content">
@@ -101,18 +101,12 @@
 <script>
 export default {
   data() {
-    return {
-      user: {
-        displayName: "",
-        email: "",
-        password: "",
-      },
-    };
+    return {};
   },
   computed: {
-    // user() {
-    //   return this.$store.state.user
-    // },
+    user() {
+      return this.$store.state.user;
+    },
     isAuthenticated() {
       return this.$store.state.user.hasOwnProperty("id");
     },
@@ -123,13 +117,7 @@ export default {
     },
   },
   mounted() {
-    const loaded = JSON.parse(localStorage.getItem("users"));
-    if (loaded) {
-      this.user.email = loaded.email;
-      this.user.displayName = loaded.username;
-    } else {
-      console.log("ddd");
-    }
+    this.$store.dispatch("initializeStore");
   },
 };
 </script>
@@ -154,19 +142,16 @@ export default {
   margin-top: 2rem;
 }
 .image-div {
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  line-height: 50px;
-  border-radius: 50%;
-  background: #532eac;
-  color: white !important;
-  font-weight: bolder;
   position: absolute;
   left: 50%;
   top: 90%;
   transform: translate(-50%, -50%);
   cursor: pointer;
+}
+.image-div img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
 }
 
 .flex-container .content {
@@ -269,6 +254,7 @@ export default {
   top: 50%;
   right: 5px;
   font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .details .groups ul li {

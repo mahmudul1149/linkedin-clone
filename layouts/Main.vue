@@ -4,7 +4,7 @@
       <div class="border">
         <div class="profile-post">
           <div class="imagediv">
-            <img src="~/assets/image/Profile-pic.jpg" alt="" />
+            <img src="../assets/image/profile-linked.png" alt="" />
           </div>
           <input
             type="text"
@@ -100,7 +100,11 @@
 
     <div class="show-profile sticky" v-for="item in addItems" :key="item.id">
       <div class="box">
-        <h3 class="profile-photo">{{ user.displayName | liveSubstr }}</h3>
+        <img
+          src="../assets/image/profile-linked.png"
+          alt=""
+          class="profile-photo"
+        />
         <div class="mt-1">
           <a>{{ user.displayName }}</a>
           <br />
@@ -292,14 +296,14 @@
     </div>
     <div class="show-profile">
       <div class="box">
-        <h3 class="profile-photo">{{ user.displayName | liveSubstr }}</h3>
+        <img src="../assets/image/profie.png" alt="" class="profile-photo" />
         <div class="mt-1">
           <a>Md Mahmudul islam</a>
           <br />
           <p>imdmahmudul237@gmail.com</p>
         </div>
       </div>
-      <p class="posting-title">I am a frontend Webdevolpoer</p>
+      <p class="posting-title">I am a front end developer</p>
 
       <div class="react">
         <span
@@ -686,16 +690,11 @@ export default {
       text: "",
       addItems: [
         {
-          title: "Make todo list",
           post: "",
           completed: true,
         },
       ],
-      user: {
-        displayName: "",
-        email: "",
-        password: "",
-      },
+
       item: {
         post: "",
       },
@@ -705,15 +704,13 @@ export default {
     items() {
       return this.$store.getters.items;
     },
-  },
-  filters: {
-    liveSubstr: function (string) {
-      return string.substring(0, 1);
+    user() {
+      return this.$store.state.user;
     },
   },
+
   methods: {
     addTodos() {
-      localStorage.setItem("items", JSON.stringify(this.text));
       this.addItems.unshift({ post: this.text });
       this.text = "";
     },
@@ -722,13 +719,7 @@ export default {
     this.$store.dispatch("initItem");
   },
   mounted() {
-    const loaded = JSON.parse(localStorage.getItem("users"));
-    if (loaded) {
-      this.user.email = loaded.email;
-      this.user.displayName = loaded.username;
-    } else {
-      console.log("ddd");
-    }
+    this.$store.dispatch("initializeStore");
   },
 };
 </script>
@@ -773,7 +764,6 @@ export default {
   border-radius: 36px;
 }
 .show-profile .profile-photo {
-  background: #f16e01;
   width: 45px;
   height: 45px;
   border-radius: 50%;

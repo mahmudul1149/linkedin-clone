@@ -9,6 +9,7 @@
         fill="currentColor"
         class="mercado-match"
         width="16"
+        cursor="pointer"
         height="16"
         focusable="false"
       >

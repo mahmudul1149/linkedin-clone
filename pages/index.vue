@@ -1,7 +1,7 @@
 <template>
   <div class="signup">
     <div v-if="isLoading" class="loading">
-      <img src="../assets/image/loading.gif" alt="" />
+      <img src="../assets/image/linkedin_loder.gif" alt="" />
     </div>
     <div v-else class="input-group container">
       <div class="text-center">
@@ -54,9 +54,9 @@
           v-model="user.password"
           required
         />
-        <button class="btn-secondery" type="submit">Accept and Resister</button>
+        <button class="btn-secondery" type="submit">Agree & Join</button>
       </form>
-      <p>Already resistered?<nuxt-link to="/signin"> Login</nuxt-link></p>
+      <p>Already on LinkedIn?<nuxt-link to="/signin"> Sign in</nuxt-link></p>
     </div>
   </div>
 </template>
@@ -155,7 +155,7 @@ export default {
   letter-spacing: 0.2mm;
   padding: 1rem 0.6rem;
   font-size: 1.2rem;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .btn-secondery:hover {
@@ -164,7 +164,8 @@ export default {
 
 .signup p {
   margin-top: 1rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
 }
 
 .signup a {
