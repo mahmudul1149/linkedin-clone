@@ -135,14 +135,14 @@ export default {
   display: block;
   width: 400px;
   outline: none;
-  border: 1px solid #333;
+  border: 1.5px solid #ccc;
   border-radius: 5px;
   box-sizing: border-box;
   padding: 1rem 0.6rem;
   margin-bottom: 0.7rem;
 }
 .signup .input-group input:hover {
-  box-shadow: 0 0 5px #333;
+  box-shadow: 0 0 5px #0a66c2;
 }
 .btn-secondery {
   transition: 0.5s ease-in;

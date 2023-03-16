@@ -21,7 +21,7 @@
                 <a href="#" class="connection">Connection With almuni</a>
               </div>
             </div>
-            <span>9</span>
+            <span>121</span>
           </div>
         </div>
         <div class="tools">
@@ -66,7 +66,7 @@
                 d="M12 1H4a1 1 0 00-1 1v13.64l5-3.36 5 3.36V2a1 1 0 00-1-1z"
               ></path>
             </svg>
-            <span>My items</span>
+            <span class="my-item">My items</span>
           </div>
         </div>
       </div>
@@ -171,10 +171,13 @@ export default {
 
 .flex-container .content .title-box a {
   padding: 0.7rem 0;
-  font-size: 1rem;
-  color: #333;
-  font-weight: bolder;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
 }
 
 .flex-container .content .title-box a:hover {
@@ -182,9 +185,14 @@ export default {
 }
 
 .flex-container .content .title-box span {
-  font-size: 0.9rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
   margin-bottom: 1rem;
-  color: #535353;
 }
 
 .flex-container .connection-box {
@@ -194,17 +202,31 @@ export default {
 }
 
 .flex-container .connection-box .box a {
-  font-size: 0.9rem;
-  color: rgb(95, 88, 88);
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .flex-container .connection-box .box .connection {
-  font-weight: bolder;
-  color: #333;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .flex-container .connection-box span {
-  color: blue;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #0a66c2;
 }
 
 .flex-container .connection-box:hover {
@@ -230,9 +252,13 @@ export default {
 
 .tools .box a {
   text-decoration: underline;
-  color: #333;
-  font-size: 0.8rem;
-  font-weight: 800;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.6);
 }
 
 .details .groups {
@@ -271,14 +297,25 @@ export default {
 
 .details .groups ul li a {
   color: rgb(1, 128, 255);
-  font-size: 0.9rem;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .tools {
   /* padding: 0.5rem; */
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
+.tools .tool {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
 .tools .items {
   margin-top: 0.4rem;
   padding: 0.7rem 0.5rem;
@@ -287,7 +324,14 @@ export default {
   gap: 0.3rem;
   border-top: 1px solid rgba(90, 88, 88, 0.3);
 }
-
+.tools .items .my-item {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+}
 .tools .items:hover {
   background: #ebebeb;
 }
@@ -307,7 +351,13 @@ export default {
   cursor: pointer;
   border: none;
   background: #fff;
-  color: #858585;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell,
+    "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.882);
+  font-weight: 400;
   padding: 0.7rem 1rem;
   border-top: 1px solid rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 10px;
