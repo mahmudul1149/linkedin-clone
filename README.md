@@ -1,4 +1,20 @@
-# linkedin-clone
+# Linkedin Clone Project
+Developed a responsive Linkedin-clone web app using Vue.js and Nuxt.js, with secure Login and Logout functionality through Google Firebase. Used CSS3 grid, flexbox, transform, and BEM convention for optimal UI design. The app is fully responsive and provides a visually appealing experience on both wide screens and smaller devices.
+## Demo
+Live version of this site: https://linkedin-clone-mahmudul.netlify.app/
+
+Here's working demo: 
+
+
+
+[linked-clone video.webm](https://user-images.githubusercontent.com/97284604/230598403-e2296237-975b-4507-9d1d-036617b76801.webm)
+
+
+## Tech Stack
+HTML, CSS, Sass, JavaScript, Vue.js, Nuxt.js & Google firebase
+
+Deployed In: Netlify
+
 
 ## Build Setup
 
