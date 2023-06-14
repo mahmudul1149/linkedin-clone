@@ -28,14 +28,6 @@
           type="text"
           name=""
           id=""
-          placeholder="Full Name"
-          v-model="user.username"
-          required
-        />
-        <input
-          type="text"
-          name=""
-          id=""
           placeholder="Profile pic URL (optional)"
         />
         <input
@@ -64,12 +56,10 @@
 <script>
 import {} from "vuelidate/lib/validators";
 
-import { login } from "../service/firebaseService";
 export default {
   data() {
     return {
       user: {
-        username: "",
         email: "",
         password: "",
       },
@@ -77,22 +67,19 @@ export default {
     };
   },
   methods: {
-    loginUser() {
-      localStorage.setItem("users", JSON.stringify(this.user));
-      this.isLoading = true;
-      login(this.user.email, this.user.password)
-        .then((user) => {
-          // commit the mutation
-          this.$store.commit("setUser", user);
-        })
-        .then(() => {
-          // Go to the home page after loggin in.
-          this.$router.push("/feed");
-        })
-        .catch((err) => {
-          this.$router.push("/signin");
-          this.isLoading = false;
+    async loginUser() {
+      try {
+        this.isLoading = true;
+        await this.$store.dispatch("login", {
+          email: this.user.email,
+          password: this.user.password,
         });
+        this.$router.push("/feed");
+      } catch (error) {
+        alert(error);
+        this.$router.push("/");
+        this.isLoading = false;
+      }
     },
   },
 };

@@ -8,9 +8,9 @@
       </div>
       <div class="content">
         <div class="title-box">
-          <a href="#">{{ user.displayName }}</a>
+          <a href="#">{{ userName }}</a>
           <br />
-          <span>{{ user.email }} </span>
+          <span>{{ userEmail }} </span>
         </div>
         <div class="border-box">
           <div class="connection-box">
@@ -99,14 +99,20 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {};
   },
   computed: {
-    user() {
-      return this.$store.state.user;
+    ...mapState(["user"]),
+    userName() {
+      return this.user ? this.user.displayName : "";
     },
+    userEmail() {
+      return this.user ? this.user.email : "";
+    },
+
     isAuthenticated() {
       return this.$store.state.user.hasOwnProperty("id");
     },
@@ -115,9 +121,6 @@ export default {
     liveSubstr: function (string) {
       return string.substring(0, 1);
     },
-  },
-  mounted() {
-    this.$store.dispatch("initializeStore");
   },
 };
 </script>

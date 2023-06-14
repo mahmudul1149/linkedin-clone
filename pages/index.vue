@@ -62,41 +62,30 @@
 </template>
 
 <script>
-import { register } from "../service/firebaseService";
-
 export default {
   data() {
     return {
-      // make the data for the form reactive
       user: {
         username: "",
         email: "",
         password: "",
       },
-      // handle loading state.
+
       isLoading: false,
     };
   },
   methods: {
-    // action to be performed when the register form is submitted
-
-    registerUser() {
-      this.isLoading = true;
-      localStorage.setItem("users", JSON.stringify(this.user));
-      register(this.user.username, this.user.email, this.user.password)
-        .then((user) => {
-          // commit the mutation
-          this.$store.commit("setUser", user);
-        })
-        .then(() => {
-          // Go to the home page after loggin in.
-          this.$router.push("/feed");
-        })
-        .catch((err) => {
-          alert("error");
-          this.$router.push("/");
-          this.isLoading = false;
+    async registerUser() {
+      try {
+        await this.$store.dispatch("signup", {
+          email: this.user.email,
+          password: this.user.password,
+          userName: this.user.username,
         });
+        this.$router.push("/feed");
+      } catch (error) {
+        alert(error);
+      }
     },
   },
 };

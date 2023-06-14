@@ -106,10 +106,10 @@
           class="profile-photo"
         />
         <div class="mt-1">
-          <a>{{ user.displayName }}</a>
+          <a>{{ userName }}</a>
           <br />
 
-          <p>{{ user.email }}</p>
+          <p>{{ userEmail }}</p>
         </div>
       </div>
       <p class="posting-title">{{ item.post }}</p>
@@ -684,6 +684,7 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
 export default {
   data() {
     return {
@@ -701,6 +702,13 @@ export default {
     };
   },
   computed: {
+    ...mapState(["user"]),
+    userName() {
+      return this.user ? this.user.displayName : "";
+    },
+    userEmail() {
+      return this.user ? this.user.email : "";
+    },
     items() {
       return this.$store.getters.items;
     },
@@ -717,9 +725,6 @@ export default {
   },
   created() {
     this.$store.dispatch("initItem");
-  },
-  mounted() {
-    this.$store.dispatch("initializeStore");
   },
 };
 </script>
