@@ -166,7 +166,9 @@
               </li>
               <div class="dropdown-menu" v-if="isvisible">
                 <p>{{ userName }}</p>
-                <button class="logout" @click="logout">Logout</button>
+                <button class="logout" @click.prevent="handleLogOut">
+                  Logout
+                </button>
               </div>
             </button>
           </ul>
@@ -199,10 +201,17 @@ export default {
     },
   },
   methods: {
+    async handleLogOut() {
+      try {
+        await this.$store.dispatch("logout");
+        this.$router.push("/signin");
+      } catch (error) {
+        alert(error);
+      }
+    },
     visible() {
       this.isvisible = !this.isvisible;
     },
-    logout() {},
   },
 };
 </script>

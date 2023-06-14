@@ -3,7 +3,7 @@ import firebase from "firebase/compat/app";
 import item from "./data/user";
 export const state = () => ({
   items: [],
-  user: [],
+  user: null,
 });
 
 export const getters = {
@@ -26,6 +26,7 @@ export const mutations = {
   },
   RESET_USER(state) {
     state.user = null;
+    state.isLoggedIn = false;
   },
 };
 export const actions = {
@@ -59,8 +60,13 @@ export const actions = {
       throw error;
     }
   },
-  async loggingOut({ commit }) {
-    await firebase.auth().signOut();
+  async logout({ commit }) {
+    try {
+      await firebase.auth().signOut();
+      commit("SET_USER", null);
+    } catch (error) {
+      alert(error);
+    }
   },
   initItem({ commit }) {
     commit("SET_ITEMS", item);
