@@ -10,7 +10,7 @@
             type="text"
             name=""
             id=""
-            @change="addTodos"
+            @change="addPost"
             placeholder="Ask your network for advice"
             v-model="text"
           />
@@ -98,7 +98,7 @@
       </div>
     </div>
 
-    <div class="show-profile sticky" v-for="item in addItems" :key="item.id">
+    <div class="show-profile sticky" v-for="post in posts" :key="post.id">
       <div class="box">
         <img
           src="../assets/image/profile-linked.png"
@@ -106,13 +106,13 @@
           class="profile-photo"
         />
         <div class="mt-1">
-          <a>{{ userName }}</a>
+          <a>{{ post.username }}</a>
           <br />
 
-          <p>{{ userEmail }}</p>
+          <p>{{ post.useremail }}</p>
         </div>
       </div>
-      <p class="posting-title">{{ item.post }}</p>
+      <p class="posting-title">{{ post.post }}</p>
 
       <div class="react">
         <span
@@ -689,25 +689,16 @@ export default {
   data() {
     return {
       text: "",
-      addItems: [
-        {
-          post: "",
-          completed: true,
-        },
-      ],
-
-      item: {
-        post: "",
-      },
+      posts: [],
     };
   },
   computed: {
     ...mapState(["user"]),
-    userName() {
-      return this.user ? this.user.displayName : "";
+    username() {
+      return this.$store.state.user.displayName;
     },
-    userEmail() {
-      return this.user ? this.user.email : "";
+    useremail() {
+      return this.$store.state.user.email;
     },
     items() {
       return this.$store.getters.items;
@@ -718,8 +709,12 @@ export default {
   },
 
   methods: {
-    addTodos() {
-      this.addItems.unshift({ post: this.text });
+    addPost() {
+      this.posts.unshift({
+        post: this.text,
+        username: this.username,
+        useremail: this.useremail,
+      });
       this.text = "";
     },
   },
