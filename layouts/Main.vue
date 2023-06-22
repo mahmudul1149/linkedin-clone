@@ -707,14 +707,27 @@ export default {
       return this.$store.state.user;
     },
   },
+  mounted() {
+    let storedPosts = localStorage.getItem("liposts");
+    if (storedPosts) {
+      this.posts = JSON.parse(storedPosts);
+    }
+  },
 
   methods: {
     addPost() {
+      let existingPosts = localStorage.getItem("liposts");
+      if (existingPosts) {
+        this.posts = JSON.parse(existingPosts);
+      } else {
+        this.posts = [];
+      }
       this.posts.unshift({
         post: this.text,
         username: this.username,
         useremail: this.useremail,
       });
+      localStorage.setItem("liposts", JSON.stringify(this.posts));
       this.text = "";
     },
   },
