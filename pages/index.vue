@@ -56,12 +56,24 @@
         />
         <button class="btn-secondery" type="submit">Agree & Join</button>
       </form>
+      <div class="flex-or">
+        <div class="border"></div>
+        <div class="or">or</div>
+        <div class="border"></div>
+      </div>
+      <button class="google-login mb-1" @click="signupWithGoogle">
+        <img src="../assets/image/google.webp" alt="Google Icon" />
+        <span>Signup with Google</span>
+      </button>
+
       <p>Already on LinkedIn?<nuxt-link to="/signin"> Sign in</nuxt-link></p>
     </div>
   </div>
 </template>
 
 <script>
+import "firebase/compat/app";
+import firebase from "firebase/compat/app";
 export default {
   data() {
     return {
@@ -85,6 +97,15 @@ export default {
         this.$router.push("/feed");
       } catch (error) {
         alert(error);
+      }
+    },
+    async signupWithGoogle() {
+      try {
+        const provider = new firebase.auth.GoogleAuthProvider();
+        await firebase.auth().signInWithPopup(provider);
+        this.$router.push("/feed");
+      } catch (error) {
+        console.log(error);
       }
     },
   },
@@ -175,5 +196,48 @@ export default {
   font-weight: 800;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.flex-or {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.flex-or .border {
+  width: 100%;
+  height: 1px;
+  background-color: #d2cfcf;
+}
+.flex-or .or {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+.google-login {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 35px;
+  color: black;
+  font-family: Roboto, HelveticaNeue, Arial, sans-serif;
+  font-size: 14px;
+  border: 1px solid #0a7dd4;
+  cursor: pointer;
+}
+
+.google-login img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.google-login span {
+  color: #0a7dd4;
+  font-size: 1.1rem;
+  display: inline-block;
+  font-weight: 400;
 }
 </style>
